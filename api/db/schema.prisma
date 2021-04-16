@@ -8,6 +8,24 @@ generator client {
   binaryTargets = "native"
 }
 
+model Post {
+  id  Int @id @default(autoincrement())
+  title String
+  body String
+  createdAt DateTime @default(now())
+
+}
+
+// api/db/schema.prisma
+
+model Contact {
+  id        Int @id @default(autoincrement())
+  name      String
+  email     String
+  message   String
+  createdAt DateTime @default(now())
+}
+
 // Define your own datamodels here and run `yarn redwood prisma migrate dev`
 // to create migrations for them and apply to your dev DB.
 // TODO: Please remove the following example:
